@@ -1,0 +1,26 @@
+#incramt {
+    transform: scale(4);
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#shop {
+    display: block;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.shopUpgrade {
+    width: 290px;
+    margin: 5px;
+}
+
+button:disabled {
+    border: 1px solid #a00;
+    border-radius: 2px;
+    background-color: #faa;
+    color: #666;
+}
