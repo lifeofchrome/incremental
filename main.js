@@ -81,7 +81,16 @@ setInterval(function () {
     amountText.innerHTML = "$" + amt;
 
     if(amt >= 8 && !upgrades["incr2-1"]) {
-        addUpgrade("incr2-1", "incr num 2s<br>cost: 8", "incr2()")
+        addUpgrade("incr2-1", "incr num 2s (+" + parseInt((((num2s + 1) / (num1s + num2s + 1)) - (num2s / (num1s + num2s))) * 100) + "%)<br>cost: " + incr2sCost, "incr2()");
+    }
+    if(num2s === 1 && upgrades["incr2-1"]) {
+        removeUpgrade("incr2-1");
+    }
+    if(num2s === 1 && amt >= incr2sCost - 5 && !upgrades["incr2-2"]) {
+        addUpgrade("incr2-2", "incr num 2s (+" + parseInt((((num2s + 1) / (num1s + num2s + 1)) - (num2s / (num1s + num2s))) * 100) + "%)<br>cost: " + incr2sCost, "incr2()");
+    }
+    if(num2s === 2 && upgrades["incr2-2"]) {
+        removeUpgrade("incr2-2");
     }
    
 }, 25);
